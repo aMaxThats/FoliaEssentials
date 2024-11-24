@@ -33,7 +33,7 @@ public final class FoliaEssentials extends JavaPlugin {
         getCommand("enderchest").setExecutor(new EnderChestCommand(this));
         getCommand("foliaessentials").setExecutor(new FolieEssentialsCommand());
         getCommand("invsee").setExecutor(new InventorySeeCommand(this));
-        Bukkit.getPluginManager().registerEvents(new InventoryAllowListener(),this);
+        Bukkit.getPluginManager().registerEvents(new InventoryAllowListener(this),this);
         Bukkit.getPluginManager().registerEvents(new EnderChestListener(this), this);
         // Plugin startup logic
 

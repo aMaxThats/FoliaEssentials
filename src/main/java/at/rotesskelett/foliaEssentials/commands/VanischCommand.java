@@ -60,6 +60,16 @@ public class VanischCommand implements CommandExecutor {
 
                 Bukkit.getRegionScheduler().execute(plugin,player.getLocation(), () -> {
                     int vanishLevel = getVanishLevel(player);
+                    if (args.length == 1) {
+                        try {
+                            int number = Integer.parseInt(args[0]);
+                            if (number > 0 && number <= vanishLevel) {
+                                vanishLevel = number;
+                            }
+                        }catch (Exception e) {
+
+                        }
+                    }
                     vanischedPlayers.put(player,vanishLevel);
                     for (Player target: Bukkit.getServer().getOnlinePlayers()) {
                         vanishPlayer(player,target,vanishLevel);

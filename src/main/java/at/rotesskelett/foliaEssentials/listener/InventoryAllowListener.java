@@ -24,7 +24,7 @@ public class InventoryAllowListener implements Listener {
         // Spieler-Objekt holen und sicherstellen, dass es im richtigen Thread ausgeführt wird
         Player player = (Player) event.getWhoClicked();
 
-        Bukkit.getGlobalRegionScheduler().execute(plugin, () -> {
+        Bukkit.getRegionScheduler().execute(plugin,player.getLocation(), () -> {
             // Prüfen, ob ein Inventar eines anderen Spielers betroffen ist
             if (isOtherPlayerInventory(event)) {
                 if (event.getClickedInventory().getType() == InventoryType.ENDER_CHEST) {
@@ -59,7 +59,7 @@ public class InventoryAllowListener implements Listener {
         // Spieler-Objekt holen und sicherstellen, dass es im richtigen Thread ausgeführt wird
         Player player = (Player) event.getWhoClicked();
 
-        Bukkit.getGlobalRegionScheduler().execute(plugin, () -> {
+        Bukkit.getRegionScheduler().execute(plugin,player.getLocation(), () -> {
             if (isOtherPlayerInventory(event)) {
                 if (event.getInventory().getType() == InventoryType.ENDER_CHEST) {
                     if (EnderChestListener.customEnderChestsUUID.get(event.getInventory()) == null

@@ -6,6 +6,10 @@ folia-supported: true
 
 
 commands:
+  vanish:
+    aliases:
+      - v
+
   foliaessentials:
     aliases:
       - "fles"

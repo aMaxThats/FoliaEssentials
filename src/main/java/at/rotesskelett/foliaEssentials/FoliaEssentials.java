@@ -3,6 +3,7 @@ package at.rotesskelett.foliaEssentials;
 import at.rotesskelett.foliaEssentials.commands.EnderChestCommand;
 import at.rotesskelett.foliaEssentials.commands.FolieEssentialsCommand;
 import at.rotesskelett.foliaEssentials.commands.InventorySeeCommand;
+import at.rotesskelett.foliaEssentials.commands.VanischCommand;
 import at.rotesskelett.foliaEssentials.listener.EnderChestListener;
 import at.rotesskelett.foliaEssentials.listener.InventoryAllowListener;
 import org.bukkit.Bukkit;
@@ -33,6 +34,7 @@ public final class FoliaEssentials extends JavaPlugin {
         getCommand("enderchest").setExecutor(new EnderChestCommand(this));
         getCommand("foliaessentials").setExecutor(new FolieEssentialsCommand());
         getCommand("invsee").setExecutor(new InventorySeeCommand(this));
+        getCommand("vanish").setExecutor(new VanischCommand(this));
         Bukkit.getPluginManager().registerEvents(new InventoryAllowListener(this),this);
         Bukkit.getPluginManager().registerEvents(new EnderChestListener(this), this);
         // Plugin startup logic
